@@ -1,0 +1,75 @@
+$head: 'Dorsa', sans-serif;
+$para: 'Open Sans', sans-serif;
+$wh : #ffffff;
+$bl: #171717;
+
+body {
+    margin: 0;
+}
+
+.f-h2 {
+    font-size: 2em;
+    margin: 0;
+}
+
+#f-AppBar {
+    width: 100%;
+    position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: $wh;
+    box-shadow: -2px 5px 9px -3px #ffffff;
+
+    .f-LogoText {
+        color: $bl;
+        font-family: $head;
+        font-size: 3em;
+        letter-spacing: 12px;
+        padding-left: 1em;
+    }
+
+    #f-Toolbar {
+        padding: 2em;
+        text-align: right;
+
+        .f-AppBarLinks {
+            color: $bl;
+            text-decoration: none;
+            padding: 1em;
+            font-family: $para;
+        }
+    }  
+}
+
+
+#f-HomeBody {
+    height: 100vh;
+    margin-top: 8em;
+    margin: 0;
+}
+
+.f-Carousel {
+    // width: 100vw;
+    height: 100%;
+    position: fixed;
+    z-index: -3;
+    outline: none;
+    border: none;
+    overflow: hidden;
+
+
+    .f-CarouselItem {
+        display: block;
+        outline: none;
+        border: none;
+        text-align: center;
+
+        .f-CarouselImg {
+            outline: none;
+            border: none;
+            min-height: 100%;
+        }
+    }
+}

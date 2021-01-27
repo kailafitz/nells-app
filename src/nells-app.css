@@ -1,0 +1,64 @@
+body {
+  margin: 0;
+}
+
+.f-h2 {
+  font-size: 2em;
+  margin: 0;
+}
+
+#f-AppBar {
+  width: 100%;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1em;
+  background-color: #ffffff;
+  box-shadow: -2px 5px 9px -3px #ffffff;
+}
+#f-AppBar .f-LogoText {
+  color: #171717;
+  font-family: "Dorsa", sans-serif;
+  font-size: 3em;
+  letter-spacing: 12px;
+  padding-left: 1em;
+}
+#f-AppBar #f-Toolbar {
+  padding: 2em;
+  text-align: right;
+}
+#f-AppBar #f-Toolbar .f-AppBarLinks {
+  color: #171717;
+  text-decoration: none;
+  padding: 1em;
+  font-family: "Open Sans", sans-serif;
+}
+
+#f-HomeBody {
+  height: 100vh;
+  margin-top: 8em;
+  margin: 0;
+}
+
+.f-Carousel {
+  height: 100%;
+  position: fixed;
+  z-index: -3;
+  outline: none;
+  border: none;
+  overflow: hidden;
+}
+.f-Carousel .f-CarouselItem {
+  display: block;
+  outline: none;
+  border: none;
+  text-align: center;
+}
+.f-Carousel .f-CarouselItem .f-CarouselImg {
+  outline: none;
+  border: none;
+  min-height: 100%;
+}
+
+/*# sourceMappingURL=nells-app.css.map */
