@@ -20,19 +20,17 @@ export default function ButtonAppBar() {
   return (
     <div className={classes.root} >
       <div position="static" id="f-AppBar">
-        <h1 className="f-LogoText">Nell Hensey</h1>
+        {/* <h1 className="f-LogoText">nell hensey</h1> */}
+        <NavLink className="f-LogoText" activeClassName="is-active" to="/"><p className="f-p">nell hensey</p></NavLink>
           <div id="f-Toolbar">
-            <NavLink className="f-AppBarLinks" activeClassName="is-active" to="/">
-                Home
-            </NavLink>
+            {/* <NavLink className="f-AppBarLinks" activeClassName="is-active" to="/">
+                home
+            </NavLink> */}
             <NavLink className="f-AppBarLinks" activeClassName="is-active" to="/works">
-                Works
+                works
             </NavLink>
             <NavLink className="f-AppBarLinks" activeClassName="is-active" to="/about">
-                About
-            </NavLink>
-            <NavLink className="f-AppBarLinks" activeClassName="is-active" to="/news">
-                News
+                bio
             </NavLink>
         </div>
       </div>

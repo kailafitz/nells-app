@@ -1,5 +1,13 @@
 body {
   margin: 0;
+  height: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.f-h1 {
+  font-size: 3em;
 }
 
 .f-h2 {
@@ -7,6 +15,48 @@ body {
   margin: 0;
 }
 
+.f-p {
+  font-size: 1em;
+  font-family: "Raleway", sans-serif;
+  margin: 0;
+}
+
+.f-b {
+  font-weight: 600;
+}
+
+.f-i {
+  font-style: italic;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+@keyframes fadeInRight {
+  0% {
+    opacity: 0;
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
 #f-AppBar {
   width: 100%;
   position: fixed;
@@ -14,25 +64,26 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1em;
-  background-color: #ffffff;
-  box-shadow: -2px 5px 9px -3px #ffffff;
 }
 #f-AppBar .f-LogoText {
-  color: #171717;
-  font-family: "Dorsa", sans-serif;
-  font-size: 3em;
-  letter-spacing: 12px;
-  padding-left: 1em;
+  color: #ffffff;
+  margin-left: 1em;
+  background-color: #171717;
+  padding: 0.5em;
+}
+#f-AppBar .f-LogoText:hover {
+  text-decoration: none;
 }
 #f-AppBar #f-Toolbar {
   padding: 2em;
   text-align: right;
 }
 #f-AppBar #f-Toolbar .f-AppBarLinks {
-  color: #171717;
+  color: #ffffff;
+  background-color: #171717;
   text-decoration: none;
-  padding: 1em;
-  font-family: "Open Sans", sans-serif;
+  padding: 0.5em;
+  font-family: "Raleway", sans-serif;
 }
 
 #f-HomeBody {
@@ -43,22 +94,167 @@ body {
 
 .f-Carousel {
   height: 100%;
-  position: fixed;
+  position: absolute;
+  top: 0;
+  left: 0;
   z-index: -3;
   outline: none;
   border: none;
   overflow: hidden;
 }
-.f-Carousel .f-CarouselItem {
-  display: block;
+.f-Carousel .f-CarouselItem .f-CarouselImg {
+  filter: grayscale(40px);
   outline: none;
   border: none;
+  margin: auto;
+}
+
+footer {
+  background-color: #171717;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+}
+footer #f-MobileFooter {
+  display: none;
+}
+footer #f-BigColumnDiv {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+footer #f-BigColumnDiv .f-FooterColumn {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  color: #ffffff;
+  min-width: 20%;
+}
+footer #f-BigColumnDiv .f-FooterColumn .f-FooterLogo {
+  margin: auto;
+}
+footer #f-BigColumnDiv .f-FooterColumn .f-FooterIconContainer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 0.5em;
+}
+footer #f-BigColumnDiv .f-FooterColumn .f-FooterIconContainer i {
+  padding-right: 0.5em;
+}
+footer #f-BigColumnDiv .f-FooterColumn .f-FooterIconContainer p {
+  margin: 0;
+}
+footer #f-BigColumnDiv .f-FooterColumn .f-FooterIcon {
+  color: #ffffff;
+  padding: 0.5em;
+  margin: 0.5em;
+}
+
+#f-AboutBody {
+  flex: 1 0 auto;
+  width: 100%;
+  padding: 8em 2em;
+}
+#f-AboutBody #f-AboutContainer {
+  width: 70%;
+  max-width: 90%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-evenly;
+  align-content: flex-start;
+}
+#f-AboutBody #f-AboutContainer #f-HeadshotDiv {
+  width: 45%;
+  margin: 1em;
+}
+#f-AboutBody #f-AboutContainer #f-HeadshotDiv #f-Headshot {
+  width: 100%;
+  -webkit-box-shadow: 1px 3px 10px 0px #000000;
+  box-shadow: 1px 3px 10px 0px #000000;
+}
+#f-AboutBody #f-AboutContainer #f-ParaDiv {
+  width: 40%;
+  margin: 1em;
+}
+
+.f-AwardContainer {
+  padding: 3em 0;
+}
+
+.f-AwardDiv {
+  width: 100%;
+  margin: 0.5em 0;
   text-align: center;
 }
-.f-Carousel .f-CarouselItem .f-CarouselImg {
-  outline: none;
-  border: none;
-  min-height: 100%;
+.f-AwardDiv hr {
+  width: 50%;
+}
+
+#f-ProjectContainer {
+  padding: 8em 1em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.f-ProjectDiv {
+  display: flex;
+  width: 40%;
+  margin: 1em;
+  padding: 1em;
+  height: 30vh;
+  background-color: #171717;
+  transition: ease-in 0.8s background-color;
+}
+.f-ProjectDiv p {
+  margin: auto;
+  color: #ffffff;
+  transition: ease-in 0.8s color;
+}
+.f-ProjectDiv:hover {
+  background-color: #ffffff;
+}
+.f-ProjectDiv:hover p {
+  color: #171717;
+}
+
+@media only screen and (max-width: 800px) {
+  #f-AboutBody #f-AboutContainer {
+    width: 90%;
+    margin: 0 auto;
+    display: block;
+    padding-bottom: 3em;
+  }
+  #f-AboutBody #f-AboutContainer #f-HeadshotDiv {
+    width: 80%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+  }
+  #f-AboutBody #f-AboutContainer #f-ParaDiv {
+    width: 80%;
+    margin: 0 auto;
+    text-align: left;
+  }
+
+  footer #f-MobileFooter {
+    width: 60%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  footer #f-MobileFooter .f-FooterIcon {
+    color: #ffffff;
+    padding: 0.5em;
+    margin: 0.5em;
+  }
+  footer #f-BigColumnDiv {
+    display: none;
+  }
 }
 
 /*# sourceMappingURL=nells-app.css.map */

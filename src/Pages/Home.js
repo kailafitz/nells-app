@@ -1,5 +1,6 @@
 import React from 'react';
 import ControlledCarousel from '../Components/ControlledCarousel';
+import Footer from '../Components/Footer';
 
 export default function Home() {
     return (
@@ -7,6 +8,7 @@ export default function Home() {
             <div id="f-HomeBody">
                 <ControlledCarousel />
             </div>
+            <Footer />
         </>
     )
 }

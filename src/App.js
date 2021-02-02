@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import ButtonAppBar from './Components/ButtonAppBar';
 import About from './Pages/About';
 import Home from "./Pages/Home";
+import Works from './Pages/Works';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
               </Route>
               <Route exact path="/about">
                 <About />
+              </Route>
+              <Route exact path="/works">
+                <Works />
               </Route>
           </Switch>
       </BrowserRouter>
