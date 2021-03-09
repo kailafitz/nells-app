@@ -1,16 +1,16 @@
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 import './nells-app.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ButtonAppBar from './Components/ButtonAppBar';
 import About from './Pages/About';
 import Home from "./Pages/Home";
 import Works from './Pages/Works';
+import NavigationBar from './Components/NavigationBar';
 
 function App() {
   return (
     <>
       <BrowserRouter>
-        <ButtonAppBar />
+        <NavigationBar />
           <Switch> 
               <Route exact path="/">
                 <Home />
