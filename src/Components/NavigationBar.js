@@ -24,9 +24,12 @@ const StyledNavBar = styled.div `
       margin-left: 1em;
       background-color: ${props => `${props.theme.colors.dark}`};
       padding: .5em;
+      transition: .2s ease color;
 
       &:hover {
         text-decoration: none;
+        color: ${props => `${props.theme.colors.grey}`};
+        cursor: pointer;
       }
     }
 
@@ -40,6 +43,12 @@ const StyledNavBar = styled.div `
         text-decoration: none;
         padding: .5em;
         // margin: 0 1em;
+        transition: .2s ease color;
+
+          &:hover {
+            color: ${props => `${props.theme.colors.grey}`};
+            cursor: pointer;
+          }
       }
     }
   }

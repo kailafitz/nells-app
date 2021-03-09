@@ -65,8 +65,10 @@ const StyledFooter = styled.footer `
                 color: ${props => `${props.theme.colors.light}`};
                 padding: .5em;
                 margin: .5em;
+                transition: .2s ease color;
 
                 &:hover {
+                    color: ${props => `${props.theme.colors.grey}`};
                     cursor: pointer;
                 }
             }            

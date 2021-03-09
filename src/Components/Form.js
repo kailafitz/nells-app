@@ -118,6 +118,9 @@ const useStyles = makeStyles((theme) => ({
         '& .MuiFormLabel-root.Mui-focused': {
             color: "#171717",
         },
+        '& .MuiIconButton-label': {
+            color: "#171717",
+        },
         '& .MuiButtonBase-root': {
             backgroundColor: "#FFFFFF",
             transition: ".2s ease-in background-color, .2s ease-in color",
