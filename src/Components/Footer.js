@@ -1,11 +1,11 @@
 import React, {useState} from 'react'
+import { NavLink } from 'react-router-dom';
 
 // styled-components imports
 import styled from 'styled-components';
 import Theme from '../theme';
 
 // MaterialUI
-import clsx from 'clsx';
 import Drawer from '@material-ui/core/Drawer';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
@@ -40,6 +40,8 @@ const StyledFooter = styled.footer `
             .f-FooterLogo {
                 // margin: .5em
                 margin: auto;
+                color: ${props => `${props.theme.colors.light}`};
+                text-decoration: none;
                 font-family: ${props => `${props.theme.fonts.raleway}`};
             }
 
@@ -63,6 +65,10 @@ const StyledFooter = styled.footer `
                 color: ${props => `${props.theme.colors.light}`};
                 padding: .5em;
                 margin: .5em;
+
+                &:hover {
+                    cursor: pointer;
+                }
             }            
         }
     }
@@ -84,20 +90,13 @@ const useStyles = makeStyles((theme) => ({
     hide: {
       display: 'none',
     },
-    menuButton: {
-      marginRight: theme.spacing(2),
-      backgroundColor: "#FFFFFF",
-      borderRadius: "4px",
-      padding:  "5px",
-      "&:hover": {
-        backgroundColor: "#171717",
-      },
-    },
     closeMenuButton: {
       marginRight: theme.spacing(2),
-      backgroundColor: "#ffffff",
+      color: "#171717",
+      backgroundColor: "#FFFFFF",
       borderRadius: "50%",
       padding:  "5px",
+      transition: ".2s ease-in background-color, .2s ease-in color",
       "&:hover": {
         backgroundColor: "#171717",
         color: "#FFFFFF",
@@ -155,7 +154,7 @@ export default function Footer() {
                 </div>
                 <div id="f-BigColumnDiv">
                     <div className="f-FooterColumn" id="f-LogoColumn">
-                        <p className="f-FooterLogo">nell hensey</p>
+                        <NavLink className="f-FooterLogo" to="/">nell hensey</NavLink>
                     </div>
                     <div className="f-FooterColumn" id="f-SocialMediaColumn">
                         <i className="far fa-envelope f-FooterIcon" onClick={handleDrawerOpen}></i>

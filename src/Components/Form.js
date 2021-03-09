@@ -11,9 +11,10 @@ import Theme from '../theme';
 // MaterialUI
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
 import Snackbar from '@material-ui/core/Snackbar';
 import MuiAlert from '@material-ui/lab/Alert';
+import SendIcon from '@material-ui/icons/Send';
+import IconButton from '@material-ui/core/IconButton';
 
 // styled-components
 const Styledp = styled.p `
@@ -33,18 +34,9 @@ const Styledp = styled.p `
         }
     }
 `
-const StyledButton = styled(Button) `
-    font-family: ${props => `${props.theme.fonts.roboto}`};
-    text-transform: uppercase;
-    background-color: ${props => `${props.theme.colors.dark}`};
-    color: ${props => `${props.theme.colors.light}`};
-    margin: .8em;
-    transition: .3s ease-in background-color, .3s ease-in color;
+const StyledIconButton = styled(IconButton) `
 
-    &:hover {
-        background-color: ${props => `${props.theme.colors.light}`};
-        color: ${props => `${props.theme.colors.dark}`};
-    }
+    
 `
 
 const StyledBody = styled.div `
@@ -125,6 +117,16 @@ const useStyles = makeStyles((theme) => ({
         },
         '& .MuiFormLabel-root.Mui-focused': {
             color: "#171717",
+        },
+        '& .MuiButtonBase-root': {
+            backgroundColor: "#FFFFFF",
+            transition: ".2s ease-in background-color, .2s ease-in color",
+            "&:hover": {
+                '& .MuiIconButton-label': {
+                    color: "#FFFFFF",
+                },
+                backgroundColor: "#171717",
+            }
         }
     },
     floatingLabelFocusStyle: {
@@ -236,12 +238,13 @@ export const Form = () => {
                             InputLabelProps={{ className: classes.floatingLabelFocusStyle, }}
                         />
                     </div>
-                    <StyledButton
+                    <StyledIconButton
                         type="submit"
                         variant="contained"
+                        disableRipple
                     >
-                    Submit
-                    </StyledButton>
+                        <SendIcon />
+                    </StyledIconButton>
                 </form>
             </StyledBody>
             </Theme>
