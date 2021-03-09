@@ -82,10 +82,8 @@ export default function About() {
                                 A perfectionist but a realist, Nell Hensey is front and centre and on top of her game.
                             </Styledp>
                         </div>
-                    </div>
-                    
+                    </div>                    
                 </StyledBody>
-                <Form />
                 <Footer />
             </Theme>
         </>

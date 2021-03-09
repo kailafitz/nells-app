@@ -1,8 +1,16 @@
-import React from 'react'
+import React, {useState} from 'react'
 
 // styled-components imports
 import styled from 'styled-components';
 import Theme from '../theme';
+
+// MaterialUI
+import clsx from 'clsx';
+import Drawer from '@material-ui/core/Drawer';
+import { makeStyles, useTheme } from '@material-ui/core/styles';
+import IconButton from '@material-ui/core/IconButton';
+import CloseIcon from '@material-ui/icons/Close';
+import { Form } from './Form';
 
 const StyledFooter = styled.footer `
     background-color: ${props => `${props.theme.colors.dark}`};
@@ -60,9 +68,84 @@ const StyledFooter = styled.footer `
     }
 `
 
+// MaterialUI makeStyles
+const drawerWidth = "100%";
+const useStyles = makeStyles((theme) => ({
+    root: {
+      display: 'flex',
+      flexGrow: 1,
+      "& .MuiList-padding": {
+        padding: "0",
+      }
+    },
+    title: {
+      flexGrow: 1,
+    },
+    hide: {
+      display: 'none',
+    },
+    menuButton: {
+      marginRight: theme.spacing(2),
+      backgroundColor: "#FFFFFF",
+      borderRadius: "4px",
+      padding:  "5px",
+      "&:hover": {
+        backgroundColor: "#171717",
+      },
+    },
+    closeMenuButton: {
+      marginRight: theme.spacing(2),
+      backgroundColor: "#ffffff",
+      borderRadius: "50%",
+      padding:  "5px",
+      "&:hover": {
+        backgroundColor: "#171717",
+        color: "#FFFFFF",
+      }
+    },
+    drawer: {
+      width: drawerWidth,
+      flexShrink: 0,
+    },
+    drawerPaper: {
+      width: drawerWidth,
+      height: "100%",
+      paddingTop: ".5em",
+      backgroundColor: "#171717",
+    },
+    drawerHeader: {
+      display: 'flex',
+      alignItems: 'center',
+      // necessary for content to be below app bar
+      ...theme.mixins.toolbar,
+      justifyContent: 'flex-end',
+    },
+    toolbar: {
+      justifyContent: "space-between",
+      alignItems: "center",
+      width: "100%",
+      alignContent: "center",
+      display: "flex",
+      padding: "0",
+    },
+  }));
+  
+
 export default function Footer() {
+    const classes = useStyles();
+    const [isOpen, setOpen] = useState(false);
+
+    const handleDrawerOpen = () => {
+        setOpen(true);
+    };
+
+    const handleDrawerClose = () => {
+    setOpen(false);
+    };
+
     return (
         <Theme>
+            <>
             <StyledFooter>
                 <div id="f-MobileFooter">
                     <i className="fas fa-mobile-alt f-FooterIcon"></i>
@@ -75,13 +158,30 @@ export default function Footer() {
                         <p className="f-FooterLogo">nell hensey</p>
                     </div>
                     <div className="f-FooterColumn" id="f-SocialMediaColumn">
-                        <i className="far fa-envelope f-FooterIcon"></i>
+                        <i className="far fa-envelope f-FooterIcon" onClick={handleDrawerOpen}></i>
                         <i className="fab fa-instagram f-FooterIcon"></i>
                         <i className="fab fa-linkedin-in f-FooterIcon"></i>
                         <i className="fab fa-vimeo-v f-FooterIcon"></i>
                     </div>
                 </div>
             </StyledFooter>
+            <Drawer
+                className={classes.drawer}
+                variant="persistent"
+                anchor='bottom'
+                open={isOpen}
+                classes={{
+                paper: classes.drawerPaper,
+                }}
+            >
+                <div className={classes.drawerHeader}>
+                    <IconButton onClick={handleDrawerClose} className={classes.closeMenuButton}>
+                        <CloseIcon />
+                    </IconButton>
+                </div>
+                <Form />
+            </Drawer>
+            </>
         </Theme>
     )
 }

@@ -18,7 +18,7 @@ import MuiAlert from '@material-ui/lab/Alert';
 // styled-components
 const Styledp = styled.p `
     font-family: ${props => `${props.theme.fonts.raleway}`};
-    color: ${props => `${props.theme.colors.dark}`};
+    color: ${props => `${props.theme.colors.light}`};
     width: 80%;
     margin: 0 auto;
     text-align: center;
