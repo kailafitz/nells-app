@@ -1,7 +1,9 @@
 import React from 'react'
+import { BrowserRouter as Router, withRouter } from 'react-router-dom';
 
 // styled-components imports
 import styled from 'styled-components';
+import Auth0ProviderwithHistory from '../Components/Auth0ProviderwithHistory';
 
 // Component imports
 import Footer from '../Components/Footer';

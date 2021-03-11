@@ -7,7 +7,7 @@ import Theme from '../theme';
 
 // MaterialUI
 import Drawer from '@material-ui/core/Drawer';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import IconButton from '@material-ui/core/IconButton';
 import CloseIcon from '@material-ui/icons/Close';
 import { Form } from './Form';
@@ -34,8 +34,6 @@ const StyledFooter = styled.footer `
             justify-content: center;
             align-content: center;
             color: ${props => `${props.theme.colors.light}`};
-            min-width: 10%;
-            max-width: 15%;
 
             .f-FooterLogo {
                 // margin: .5em
@@ -70,6 +68,7 @@ const StyledFooter = styled.footer `
                 &:hover {
                     color: ${props => `${props.theme.colors.grey}`};
                     cursor: pointer;
+                    transform: scale(0.9);
                 }
             }            
         }

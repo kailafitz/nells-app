@@ -5,6 +5,9 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import Theme from '../theme';
 
+// Component imports
+import AuthenticationButton from './AuthicationButton';
+
 const StyledNavBar = styled.div `
   // flex-grow: 1;
   width: 100%;
@@ -34,7 +37,6 @@ const StyledNavBar = styled.div `
     }
 
     #f-Toolbar {
-      padding: 2em;
       text-align: right;
 
       .f-AppBarLinks {
@@ -72,6 +74,7 @@ export default function NavigationBar() {
                   bio
               </NavLink>
           </div>
+          <AuthenticationButton />
         </div>
       </StyledNavBar>
     </Theme>

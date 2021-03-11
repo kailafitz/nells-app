@@ -7,7 +7,6 @@ import Theme from '../theme';
 // Component imports
 import Award from '../Components/Award';
 import Footer from '../Components/Footer';
-import {Form} from '../Components/Form';
 
 // Media imports
 import Headshot from '../Images/Headshot.png';

@@ -11,7 +11,7 @@ function App() {
     <>
       <BrowserRouter>
         <NavigationBar />
-          <Switch> 
+          <Switch>
               <Route exact path="/">
                 <Home />
               </Route>
@@ -19,7 +19,7 @@ function App() {
                 <About />
               </Route>
               <Route exact path="/works">
-                <Works />
+                  <Works />
               </Route>
           </Switch>
       </BrowserRouter>
